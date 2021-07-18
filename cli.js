@@ -70,6 +70,7 @@ const cli = meow(`
 		# and output minified files in the dist
 	  $ multi-uglifyjs assets/*.js -o dist
 `, {
+	importMeta: import.meta,
 	flags: {
 		annotations: {
 			type: 'boolean'

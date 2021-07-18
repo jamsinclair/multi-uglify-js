@@ -6,7 +6,7 @@ This is a very loose wrapper around [UglifyJS 3](https://github.com/mishoo/Uglif
 
 It aims to replicate as much of the UglifyJS command line behaviour within reason.
 
-*⚠️ There may be some bugs with around advanced usage of uglify options. Please open an issue or PR if encountered*
+*⚠️ There may be some bugs around advanced usage of uglify options. Please open an issue or PR if encountered*
 
 ## Install
 
