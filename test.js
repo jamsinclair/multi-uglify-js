@@ -4,7 +4,7 @@ import globby from 'globby';
 import fs from 'fs';
 import {promisify} from 'util';
 
-const fsRm = promisify(fs.rm);
+const fsRm = promisify(fs.unlink);
 const fsRmdir = promisify(fs.rmdir);
 
 const cleanFiles = async (globs = []) => {
