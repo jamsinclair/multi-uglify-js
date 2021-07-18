@@ -1,17 +1,21 @@
 import test from 'ava';
 import execa from 'execa';
 import globby from 'globby';
-import {promises as fs} from 'fs';
+import fs from 'fs';
+import {promisify} from 'util';
+
+const fsRm = promisify(fs.rm);
+const fsRmdir = promisify(fs.rmdir);
 
 const cleanFiles = async (globs = []) => {
 	const files = await globby(globs);
-	return Promise.all(files.map(file => fs.rm(file)));
+	return Promise.all(files.map(file => fsRm(file)));
 };
 
 test.after(async () => {
 	await cleanFiles(['fixtures/*.min.js']);
-	await fs.rmdir('dist', {recursive: true});
-	await fs.rmdir('dist-multiple', {recursive: true});
+	await fsRmdir('dist', {recursive: true});
+	await fsRmdir('dist-multiple', {recursive: true});
 });
 
 test('minifies multiple js files individually with default params and outputs in place', async t => {
