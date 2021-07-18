@@ -1,17 +1,16 @@
 {
-	"name": "unicorn-fun-cli",
-	"version": "0.0.0",
-	"description": "My awesome command-line tool",
+	"name": "multi-uglify-js",
+	"version": "0.1.0",
+	"description": "Batch minify multiple JavaScript files on the command line",
 	"license": "MIT",
-	"repository": "YOUR-GITHUB-USERNAME/unicorn-fun-cli",
+	"repository": "jamsinclair/multi-uglify-js",
 	"author": {
-		"name": "YOUR NAME",
-		"email": "YOUR EMAIL",
-		"url": "YOUR WEBSITE"
+		"name": "jamsinclair",
+		"email": "jamsinclairnz+npm@gmail.com"
 	},
 	"type": "module",
 	"bin": {
-		"unicorn-fun": "cli.js"
+		"multi-uglifyjs": "cli.js"
 	},
 	"engines": {
 		"node": ">=12"
@@ -23,18 +22,24 @@
 		"cli.js"
 	],
 	"keywords": [
-		"cli",
-		"cli-app",
-		"unicorn",
-		"fun"
+		"uglify",
+		"uglifyjs",
+		"uglify-js",
+		"minify",
+		"batch",
+		"multiple"
 	],
 	"dependencies": {
-		"meow": "^9.0.0",
-		"unicorn-fun": "^0.0.0"
+		"globby": "^11.0.4",
+		"meow": "10.1.0",
+		"uglify-js": "^3.13.10"
 	},
 	"devDependencies": {
 		"ava": "^3.15.0",
 		"execa": "^5.0.0",
 		"xo": "^0.37.0"
+	},
+	"xo": {
+		"ignores": ["fixtures"]
 	}
 }
